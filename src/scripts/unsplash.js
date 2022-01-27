@@ -6,7 +6,7 @@ var UnsplashAPI = {
                 query: query
             },
             headers: {
-                "Authorization": "Client-ID LLbR7h_Ce0ntXaTwR8T31Tz8hArUB2oLJgi94JSnNaM"
+                "Authorization": "Client-ID // replace with your Unsplash API access key"
             },
             timeout: 10000
         });
