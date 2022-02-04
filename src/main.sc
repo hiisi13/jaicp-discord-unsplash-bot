@@ -52,3 +52,37 @@ theme: /
                     };
                     $response.replies.push(reply);
                 go: /
+
+    state: ScheduleRandom
+        intent!: /ImageOfTheDay
+        script:
+            $session.reminderTime = $parseTree["_reminderTime"];
+            var event = $pushgate.createEvent(
+                $session.reminderTime.value,
+                "scheduleEvent"
+            );
+            $session.reminderId = event.id;
+            $temp.reminderTime = moment($session.reminderTime.value).locale("en").calendar();
+        a: Very well, your random Unsplash picture will arrive at {{$temp.reminderTime}}.
+
+
+    state: Remind
+        event!: scheduleEvent
+        script:
+            var picture = UnsplashAPI.random();
+
+            $response.replies = $response.replies || [];
+            var content = [];
+            content.push({
+                "title": picture.description || "No description",
+                "image": picture.urls.small,
+                "url": picture.links.html,
+                "btnText": "View on Unsplash"
+            });
+
+            var reply = {
+                "type": "carousel",
+                "text": "Your scheduled random picture",
+                "content": content
+            };
+            $response.replies.push(reply);

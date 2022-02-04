@@ -1,121 +1,196 @@
 {
-  "project" : {
-    "id" : "unsplash_en-1000004821-WIw",
-    "name" : "unsplash_en-1000004821-WIw",
-    "folder" : "/jaicp"
+  "project": {
+    "id": "unsplash_en-1000004821-WIw",
+    "name": "unsplash_en-1000004821-WIw",
+    "folder": "/jaicp"
   },
-  "settings" : {
-    "language" : "en",
-    "spellingCorrection" : false,
-    "classificationAlgorithm" : "sts",
-    "timezone" : "Europe/Moscow",
-    "extendedSettings" : {
-      "useShared" : false
+  "settings": {
+    "language": "en",
+    "spellingCorrection": false,
+    "classificationAlgorithm": "sts",
+    "timezone": "Europe/Moscow",
+    "extendedSettings": {
+      "useShared": false
     },
-    "shared" : false
+    "shared": false
   },
-  "intents" : [ {
-    "id" : 4915998,
-    "path" : "/bye",
-    "enabled" : true,
-    "shared" : false,
-    "phrases" : [ {
-      "text" : "bye"
-    } ],
-    "priority" : 0
-  }, {
-    "id" : 4915999,
-    "path" : "/hello",
-    "enabled" : true,
-    "shared" : false,
-    "phrases" : [ {
-      "text" : "hello"
-    } ],
-    "priority" : 0
-  }, {
-    "id" : 4916000,
-    "path" : "/search",
-    "enabled" : true,
-    "shared" : false,
-    "phrases" : [ {
-      "text" : "search for"
-    }, {
-      "text" : "search unsplash"
-    }, {
-      "text" : "lookup images"
-    }, {
-      "text" : "find images"
-    }, {
-      "text" : "find pictures"
-    }, {
-      "text" : "lookup pictures"
-    } ],
-    "patterns" : [ ],
-    "slots" : [ ],
-    "priority" : 0
-  } ],
-  "entities" : [ ],
-  "enabledSystemEntities" : [ "duckling.number", "duckling.time", "duckling.duration", "duckling.phone-number", "duckling.email", "duckling.url" ],
-  "spellerDictionary" : [ ],
-  "systemEntities" : [ {
-    "name" : "duckling.number",
-    "version" : "v2",
-    "enabled" : true
-  }, {
-    "name" : "duckling.ordinal",
-    "version" : "v2",
-    "enabled" : false
-  }, {
-    "name" : "duckling.amount-of-money",
-    "version" : "v2",
-    "enabled" : false
-  }, {
-    "name" : "duckling.distance",
-    "version" : "v2",
-    "enabled" : false
-  }, {
-    "name" : "duckling.quantity",
-    "version" : "v2",
-    "enabled" : false
-  }, {
-    "name" : "duckling.temperature",
-    "version" : "v2",
-    "enabled" : false
-  }, {
-    "name" : "duckling.volume",
-    "version" : "v2",
-    "enabled" : false
-  }, {
-    "name" : "duckling.time",
-    "version" : "v2",
-    "enabled" : true
-  }, {
-    "name" : "duckling.date",
-    "version" : "v2",
-    "enabled" : false
-  }, {
-    "name" : "duckling.time-of-day",
-    "version" : "v2",
-    "enabled" : false
-  }, {
-    "name" : "duckling.duration",
-    "version" : "v2",
-    "enabled" : true
-  }, {
-    "name" : "duckling.phone-number",
-    "version" : "v2",
-    "enabled" : true
-  }, {
-    "name" : "duckling.email",
-    "version" : "v2",
-    "enabled" : true
-  }, {
-    "name" : "duckling.url",
-    "version" : "v2",
-    "enabled" : true
-  }, {
-    "name" : "duckling.interval",
-    "version" : "v2",
-    "enabled" : false
-  } ]
+  "intents": [
+    {
+      "id": 5105112,
+      "path": "/bye",
+      "enabled": true,
+      "shared": false,
+      "phrases": [
+        {
+          "text": "bye"
+        }
+      ],
+      "priority": 0
+    },
+    {
+      "id": 5105113,
+      "path": "/hello",
+      "enabled": true,
+      "shared": false,
+      "phrases": [
+        {
+          "text": "hello"
+        }
+      ],
+      "priority": 0
+    },
+    {
+      "id": 5105114,
+      "path": "/ImageOfTheDay",
+      "enabled": true,
+      "shared": false,
+      "phrases": [
+        {
+          "text": "schedule a random picture"
+        },
+        {
+          "text": "schedule a picture"
+        },
+        {
+          "text": "post picture on schedule"
+        },
+        {
+          "text": "schedule unsplash pic"
+        },
+        {
+          "text": "post random"
+        },
+        {
+          "text": "post random on schedule"
+        }
+      ],
+      "patterns": [],
+      "slots": [
+        {
+          "name": "reminderTime",
+          "entity": "duckling.time",
+          "required": true,
+          "prompts": ["When do you want me to schedule it?"],
+          "array": false
+        }
+      ],
+      "priority": 0
+    },
+    {
+      "id": 5105115,
+      "path": "/search",
+      "enabled": true,
+      "shared": false,
+      "phrases": [
+        {
+          "text": "search for"
+        },
+        {
+          "text": "search unsplash"
+        },
+        {
+          "text": "lookup images"
+        },
+        {
+          "text": "find images"
+        },
+        {
+          "text": "find pictures"
+        },
+        {
+          "text": "lookup pictures"
+        }
+      ],
+      "patterns": [],
+      "slots": [],
+      "priority": 0
+    }
+  ],
+  "entities": [],
+  "enabledSystemEntities": [
+    "duckling.number",
+    "duckling.time",
+    "duckling.duration",
+    "duckling.phone-number",
+    "duckling.email",
+    "duckling.url"
+  ],
+  "spellerDictionary": [],
+  "systemEntities": [
+    {
+      "name": "duckling.number",
+      "version": "v2",
+      "enabled": true
+    },
+    {
+      "name": "duckling.ordinal",
+      "version": "v2",
+      "enabled": false
+    },
+    {
+      "name": "duckling.amount-of-money",
+      "version": "v2",
+      "enabled": false
+    },
+    {
+      "name": "duckling.distance",
+      "version": "v2",
+      "enabled": false
+    },
+    {
+      "name": "duckling.quantity",
+      "version": "v2",
+      "enabled": false
+    },
+    {
+      "name": "duckling.temperature",
+      "version": "v2",
+      "enabled": false
+    },
+    {
+      "name": "duckling.volume",
+      "version": "v2",
+      "enabled": false
+    },
+    {
+      "name": "duckling.time",
+      "version": "v2",
+      "enabled": true
+    },
+    {
+      "name": "duckling.date",
+      "version": "v2",
+      "enabled": false
+    },
+    {
+      "name": "duckling.time-of-day",
+      "version": "v2",
+      "enabled": false
+    },
+    {
+      "name": "duckling.duration",
+      "version": "v2",
+      "enabled": true
+    },
+    {
+      "name": "duckling.phone-number",
+      "version": "v2",
+      "enabled": true
+    },
+    {
+      "name": "duckling.email",
+      "version": "v2",
+      "enabled": true
+    },
+    {
+      "name": "duckling.url",
+      "version": "v2",
+      "enabled": true
+    },
+    {
+      "name": "duckling.interval",
+      "version": "v2",
+      "enabled": false
+    }
+  ]
 }
